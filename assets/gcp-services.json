@@ -1,0 +1,214 @@
+[
+  {
+    "name": "AI Platform",
+    "url": "https://console.cloud.google.com/ai-platform?project={{PROJECT_ID}}"
+  },
+  {
+    "name": "App Engine",
+    "url": "https://console.cloud.google.com/appengine?project={{PROJECT_ID}}"
+  },
+  {
+    "name": "Artifact Registry",
+    "url": "https://console.cloud.google.com/artifacts?project={{PROJECT_ID}}"
+  },
+  {
+    "name": "BigQuery",
+    "url": "https://console.cloud.google.com/bigquery?project={{PROJECT_ID}}"
+  },
+  {
+    "name": "BigQuery Data Transfers",
+    "url": "https://console.cloud.google.com/bigquery/transfers?project={{PROJECT_ID}}"
+  },
+  {
+    "name": "BigQuery Scheduled Queries",
+    "url": "https://console.cloud.google.com/bigquery/scheduled-queries?project={{PROJECT_ID}}"
+  },
+  {
+    "name": "Bigtable",
+    "url": "https://console.cloud.google.com/bigtable?project={{PROJECT_ID}}"
+  },
+  {
+    "name": "Billing",
+    "url": "https://console.cloud.google.com/billing?project={{PROJECT_ID}}"
+  },
+  {
+    "name": "Cloud Build",
+    "url": "https://console.cloud.google.com/cloud-build/builds?project={{PROJECT_ID}}"
+  },
+  {
+    "name": "Cloud Composer",
+    "url": "https://console.cloud.google.com/composer/environments?project={{PROJECT_ID}}"
+  },
+  {
+    "name": "Cloud DNS",
+    "url": "https://console.cloud.google.com/net-services/dns/zones?project={{PROJECT_ID}}"
+  },
+  {
+    "name": "Cloud Functions",
+    "url": "https://console.cloud.google.com/functions/list?project={{PROJECT_ID}}"
+  },
+  {
+    "name": "Cloud Run",
+    "url": "https://console.cloud.google.com/run?project={{PROJECT_ID}}"
+  },
+  {
+    "name": "Cloud Scheduler",
+    "url": "https://console.cloud.google.com/cloudscheduler?project={{PROJECT_ID}}"
+  },
+  {
+    "name": "Cloud SQL",
+    "url": "https://console.cloud.google.com/sql?project={{PROJECT_ID}}"
+  },
+  {
+    "name": "Cloud Storage",
+    "url": "https://console.cloud.google.com/storage/browser?project={{PROJECT_ID}}"
+  },
+  {
+    "name": "Cloud Tasks",
+    "url": "https://console.cloud.google.com/cloudtasks?project={{PROJECT_ID}}"
+  },
+  {
+    "name": "Compute Engine",
+    "url": "https://console.cloud.google.com/compute/instances?project={{PROJECT_ID}}"
+  },
+  {
+    "name": "Console",
+    "url": "https://console.cloud.google.com/home/dashboard?project={{PROJECT_ID}}"
+  },
+  {
+    "name": "Container Registry",
+    "url": "https://console.cloud.google.com/gcr/images/{{PROJECT_ID}}?project={{PROJECT_ID}}"
+  },
+  {
+    "name": "Credentials",
+    "url": "https://console.cloud.google.com/apis/credentials?project={{PROJECT_ID}}"
+  },
+  {
+    "name": "Data Catalog",
+    "url": "https://console.cloud.google.com/datacatalog?project={{PROJECT_ID}}"
+  },
+  {
+    "name": "Dataflow",
+    "url": "https://console.cloud.google.com/dataflow?project={{PROJECT_ID}}"
+  },
+  {
+    "name": "Datastore",
+    "url": "https://console.cloud.google.com/datastore?project={{PROJECT_ID}}"
+  },
+  {
+    "name": "Endpoints",
+    "url": "https://console.cloud.google.com/endpoints?project={{PROJECT_ID}}"
+  },
+  {
+    "name": "Error Reporting",
+    "url": "https://console.cloud.google.com/errors?project={{PROJECT_ID}}"
+  },
+  {
+    "name": "Firebase Authentication Users",
+    "url": "https://console.firebase.google.com/u/0/project/{{PROJECT_ID}}/authentication/users"
+  },
+  {
+    "name": "Firebase Console",
+    "url": "https://console.firebase.google.com/u/0/project/{{PROJECT_ID}}/overview"
+  },
+  {
+    "name": "Firebase Functions",
+    "url": "https://console.firebase.google.com/u/0/project/{{PROJECT_ID}}/functions"
+  },
+  {
+    "name": "Firebase Hosting",
+    "url": "https://console.firebase.google.com/u/0/project/{{PROJECT_ID}}/hosting"
+  },
+  {
+    "name": "Firebase ML Kit",
+    "url": "https://console.firebase.google.com/u/0/project/{{PROJECT_ID}}/ml"
+  },
+  {
+    "name": "Firebase Storage",
+    "url": "https://console.firebase.google.com/u/0/project/{{PROJECT_ID}}/storage"
+  },
+  {
+    "name": "IAM & Admin",
+    "url": "https://console.cloud.google.com/iam-admin/iam/project?project={{PROJECT_ID}}"
+  },
+  {
+    "name": "Instance Groups",
+    "url": "https://console.cloud.google.com/compute/instanceGroups/list?project={{PROJECT_ID}}"
+  },
+  {
+    "name": "KMS",
+    "url": "https://console.cloud.google.com/security/kms?project={{PROJECT_ID}}"
+  },
+  {
+    "name": "Kubernetes Engine",
+    "url": "https://console.cloud.google.com/kubernetes/list?project={{PROJECT_ID}}"
+  },
+  {
+    "name": "Load Balancing",
+    "url": "https://console.cloud.google.com/net-services/loadbalancing/loadBalancers/list?project={{PROJECT_ID}}"
+  },
+  {
+    "name": "Logging",
+    "url": "https://console.cloud.google.com/logs?project={{PROJECT_ID}}"
+  },
+  {
+    "name": "Memorystore",
+    "url": "https://console.cloud.google.com/memorystore/redis/instances?project={{PROJECT_ID}}"
+  },
+  {
+    "name": "Monitoring",
+    "url": "https://console.cloud.google.com/monitoring?project={{PROJECT_ID}}"
+  },
+  {
+    "name": "Network services",
+    "url": "https://console.cloud.google.com/net-services?project={{PROJECT_ID}}"
+  },
+  {
+    "name": "Profiler",
+    "url": "https://console.cloud.google.com/profiler?project={{PROJECT_ID}}"
+  },
+  {
+    "name": "PubSub",
+    "url": "https://console.cloud.google.com/cloudpubsub/topicList?project={{PROJECT_ID}}"
+  },
+  {
+    "name": "Quotas",
+    "url": "https://console.cloud.google.com/iam-admin/quotas?project={{PROJECT_ID}}"
+  },
+  {
+    "name": "Secret Manager",
+    "url": "https://console.cloud.google.com/security/secret-manager?project={{PROJECT_ID}}"
+  },
+  {
+    "name": "Service Accounts",
+    "url": "https://console.cloud.google.com/iam-admin/serviceaccounts?project={{PROJECT_ID}}"
+  },
+  {
+    "name": "Spanner",
+    "url": "https://console.cloud.google.com/spanner/instances?project={{PROJECT_ID}}"
+  },
+  {
+    "name": "Trace",
+    "url": "https://console.cloud.google.com/traces?project={{PROJECT_ID}}"
+  },
+  {
+    "name": "Transfer Service Cloud",
+    "url": "https://console.cloud.google.com/transfer/cloud?project={{PROJECT_ID}}"
+  },
+  {
+    "name": "Transfer Service On-Premise",
+    "url": "https://console.cloud.google.com/transfer/on-premises/jobs?project={{PROJECT_ID}}"
+  },
+  {
+    "name": "Vertex AI",
+    "url": "https://console.cloud.google.com/vertex-ai?project={{PROJECT_ID}}"
+  },
+  {
+    "name": "VPC networks",
+    "url": "https://console.cloud.google.com/networking/networks/list?project={{PROJECT_ID}}"
+  },
+  {
+    "name": "Workflows",
+    "url": "https://console.cloud.google.com/workflows?project={{PROJECT_ID}}"
+  }
+]
