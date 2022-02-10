@@ -9,7 +9,7 @@
   "commands": [
     {
       "name": "index",
-      "title": "GCP Shortcuts",
+      "title": "Search GCP Projects",
       "description": "Search gcp project, and jump to specific service page.",
       "mode": "view"
     }
