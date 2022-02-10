@@ -1,7 +1,7 @@
 {
   "$schema": "https://www.raycast.com/schemas/extension.json",
-  "name": "gcp-project-search",
-  "title": "GCP Project Search",
+  "name": "gcp-shortcuts",
+  "title": "GCP Shortcuts",
   "description": "Search gcp project, and jump to specific service page.",
   "icon": "command-icon.png",
   "author": "Attsun1031",
@@ -9,7 +9,7 @@
   "commands": [
     {
       "name": "index",
-      "title": "GCP Project Search",
+      "title": "GCP Shortcuts",
       "description": "Search gcp project, and jump to specific service page.",
       "mode": "view"
     }

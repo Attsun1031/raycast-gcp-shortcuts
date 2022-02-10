@@ -1,13 +1,5 @@
-import {
-  ActionPanel,
-  List,
-  OpenInBrowserAction,
-  showToast,
-  ToastStyle,
-  randomId,
-  PushAction,
-} from "@raycast/api";
-import { useState, useEffect, useRef } from "react";
+import {ActionPanel, Detail, List, OpenInBrowserAction, PushAction, randomId, showToast, ToastStyle,} from "@raycast/api";
+import {useEffect, useRef, useState} from "react";
 import os from 'os'
 import * as path from 'path'
 import * as fs from 'fs'
@@ -15,19 +7,31 @@ import {AbortError} from "node-fetch";
 
 const projectsFileName = ".raycast-gcp-shortcuts"
 const servicesJsonFile = "assets/gcp-services.json"
+const startMessage = "## How to start GCP Project Search command\n\
+Thank you for install!\n\n\
+To start, please create your projects file by the command below.\n\n\
+```\n\
+gcloud projects list --format=\"value(projectId)\" --sort-by=projectId > ~/.raycast-gcp-shortcuts\n\
+```\n\n\
+(Make sure to install and setup `gcloud` command first.)\n\
+"
 
 export default function Command() {
   const { state, search } = useSearch();
 
-  return (
-    <List isLoading={state.isLoading} onSearchTextChange={search} searchBarPlaceholder="Search by name..." throttle>
-      <List.Section title="Results" subtitle={state.results.length + ""}>
-        {state.results.map((searchResult) => (
-          <SearchListItem key={searchResult.id} searchResult={searchResult} />
-        ))}
-      </List.Section>
-    </List>
-  );
+  if (state.isLoading || state.hasProjectFile) {
+      return (
+          <List isLoading={state.isLoading} onSearchTextChange={search} searchBarPlaceholder="Search by project name..." throttle>
+              <List.Section title="Results" subtitle={state.results.length + ""}>
+                  {state.results.map((searchResult) => (
+                      <SearchListItem key={searchResult.id} searchResult={searchResult} />
+                  ))}
+              </List.Section>
+          </List>
+      );
+  } else {
+      return <Detail markdown={ startMessage } />
+  }
 }
 
 function SearchListItem({ searchResult }: { searchResult: SearchResult }) {
@@ -75,8 +79,9 @@ function SearchServiceItem({ searchResult }: { searchResult: SearchResult }) {
 }
 
 function useSearch() {
-  const [state, setState] = useState<SearchState>({ results: [], isLoading: true, selectedProject: null });
+  const [state, setState] = useState<SearchState>({ results: [], isLoading: true, selectedProject: null, hasProjectFile: false });
   const cancelRef = useRef<AbortController | null>(null);
+  const projectsLoadResultAsync = loadProjects()
 
   useEffect(() => {
     search("");
@@ -93,7 +98,15 @@ function useSearch() {
         ...oldState,
         isLoading: true,
       }));
-      const results = await searchFromFile(searchText);
+      const projectsLoadResult = await projectsLoadResultAsync
+      setState((oldState) => ({
+          ...oldState,
+          hasProjectFile: projectsLoadResult.hasProjectFile,
+      }));
+      let results: SearchResult[] = [];
+      if (projectsLoadResult.hasProjectFile) {
+        results = searchMatchedProjects(searchText, projectsLoadResult.projects);
+      }
       setState((oldState) => ({
         ...oldState,
         results: results,
@@ -114,10 +127,23 @@ function useSearch() {
   };
 }
 
-async function searchFromFile(searchText: string): Promise<SearchResult[]> {
-  const projectsFilePath = path.join(os.homedir(), projectsFileName)
-  let content = await fs.promises.readFile(projectsFilePath, 'utf-8')
-  let projects = content.split(/\r?\n/)
+async function loadProjects(): Promise<ProjectLoadResult> {
+    const projectsFilePath = path.join(os.homedir(), projectsFileName)
+    if (fs.existsSync(projectsFilePath)) {
+        let content = await fs.promises.readFile(projectsFilePath, 'utf-8')
+        return {
+            projects: content.split(/\r?\n/),
+            hasProjectFile: true,
+        }
+    } else {
+        return Promise.resolve({
+            projects: [],
+            hasProjectFile: false
+        })
+    }
+}
+
+function searchMatchedProjects(searchText: string, projects: Array<string>): SearchResult[] {
   return projects.filter(v => {
     return v.includes(searchText)
   }).map(v => {
@@ -145,7 +171,7 @@ async function searchServices(searchText: string, project: string): Promise<Sear
 }
 
 function useServiceSearch(project: string) {
-  const [state, setState] = useState<SearchState>({ results: [], isLoading: true, selectedProject: null });
+  const [state, setState] = useState<SearchState>({ results: [], isLoading: true, selectedProject: null, hasProjectFile: true });
   const cancelRef = useRef<AbortController | null>(null);
 
   useEffect(() => {
@@ -188,6 +214,7 @@ interface SearchState {
   results: SearchResult[];
   isLoading: boolean;
   selectedProject: string | null;
+  hasProjectFile: boolean;
 }
 
 interface SearchResult {
@@ -199,4 +226,9 @@ interface SearchResult {
 interface ServiceObject {
   name: string;
   url: string;
+}
+
+interface ProjectLoadResult {
+    projects: string[];
+    hasProjectFile: boolean;
 }
