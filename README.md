@@ -1,6 +1,6 @@
 # raycast-gcp-shortcuts
 
-## !!!IMPORTANT NOTE!!!
+## !!! IMPORTANT NOTE !!!
 This plugin is under development and is not published to the store.
 
 Please use at your own risk.
