@@ -8,9 +8,11 @@ Please use at your own risk.
 ## How to use
 ```
 # At first, please clone this repository
-$ git clone `THIS REPOSITORY` 
+$ git clone `THIS REPOSITORY`
+
 # Go to the repository root
 $ cd path/to/this-repoisotry
+
 # Install depenedencies and run this app
 $ npm install
 $ npm run dev
