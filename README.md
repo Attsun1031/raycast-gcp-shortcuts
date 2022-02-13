@@ -18,12 +18,18 @@ cd path/to/this-repoisotry
 ```
 
 Install depenedencies and run this app.
+You can quit `npm run dev` after you see `✅ Build complete` message.
 ```
 npm install
 npm run dev
 ```
 
-You can quit `npm run dev` after you see `✅ Build complete` message.
+Setup your projects file as the following command. (GCP Shortcuts suggest projects from this file.)
+
+```
+gcloud projects list --format="value(projectId)" --sort-by=projectId > ~/.raycast-gcp-shortcuts
+```
+
 
 ## How to use
 1. Launch raycast
