@@ -4,6 +4,10 @@
     "url": "https://console.cloud.google.com/ai-platform?project={{PROJECT_ID}}"
   },
   {
+    "name": "Alloy DB",
+    "url": "https://console.cloud.google.com/alloydb?project={{PROJECT_ID}}"
+  },
+  {
     "name": "App Engine",
     "url": "https://console.cloud.google.com/appengine?project={{PROJECT_ID}}"
   },
